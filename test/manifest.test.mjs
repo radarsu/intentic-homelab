@@ -22,7 +22,7 @@ test(`the manifest envelope parses against the published ExtensionManifestSchema
     // Data only: no bundle, no processes, no daemon reach. The cards are the whole contribution.
     assert.equal(parsed.entry, undefined);
     assert.equal(parsed.permissions, undefined);
-    assert.equal(parsed.engines.intentic, `^1.0.0`);
+    assert.equal(parsed.engines.intentic, `^2.0.0`);
 });
 
 test(`every card is a cli capability with a credential, a skill and an env mapping`, async () => {
