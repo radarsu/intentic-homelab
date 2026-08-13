@@ -43,7 +43,7 @@ memory. They are not verified against a live server — nobody here has your Jel
 ## Tests
 
 ```sh
-npm install && npm test
+pnpm install && pnpm test
 ```
 
 The manifest is the product, so the tests are about the manifest: every `${placeholder}` in an `env` template

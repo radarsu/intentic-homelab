@@ -1,10 +1,11 @@
 {
     "name": "intentic-homelab",
     "version": "1.0.0",
-    "description": "Capability cards for the servers people run at home — Home Assistant, Paperless-ngx, Jellyfin, Immich",
+    "description": "Capability cards for the servers people run at home \u2014 Home Assistant, Paperless-ngx, Jellyfin, Immich",
     "license": "MIT",
     "private": true,
     "type": "module",
+    "packageManager": "pnpm@11.13.1",
     "scripts": {
         "test": "node --test test/*.test.mjs"
     },
