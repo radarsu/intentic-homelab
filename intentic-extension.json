@@ -3,6 +3,7 @@
     "name": "homelab",
     "version": "1.0.0",
     "category": "connections",
+    "art": "<svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 32 32\"><rect width=\"32\" height=\"32\" fill=\"#0E9F8C\"/><path d=\"M16 3.5L2.5 14.5H7V28.5h18V14.5h4.5z\" fill=\"#fff\"/><rect x=\"10\" y=\"17\" width=\"12\" height=\"4.4\" rx=\"1.2\" fill=\"#0E9F8C\"/><rect x=\"10\" y=\"22.8\" width=\"12\" height=\"4.4\" rx=\"1.2\" fill=\"#0E9F8C\"/><circle cx=\"12.6\" cy=\"19.2\" r=\"1.1\" fill=\"#FFD05C\"/><circle cx=\"12.6\" cy=\"25\" r=\"1.1\" fill=\"#FFD05C\"/></svg>",
     "icon": "server",
     "engines": { "intentic": "^2.0.0" },
     "contributes": {
