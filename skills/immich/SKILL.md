@@ -15,7 +15,7 @@ curl -sf -H "x-api-key: $IMMICH_API_KEY" "$IMMICH_URL/api/server/about" | jq '{v
 ## Two searches, and they are not interchangeable
 
 **Smart search** is Immich's semantic index. It answers a description of what is *in* the picture, with no
-tagging involved — this is the one to reach for when the user describes a photo in words:
+tagging involved: this is the one to reach for when the user describes a photo in words:
 
 ```sh
 curl -s -X POST -H "x-api-key: $IMMICH_API_KEY" -H "Content-Type: application/json" \

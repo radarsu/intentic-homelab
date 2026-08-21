@@ -1,6 +1,6 @@
 ---
 name: jellyfin
-description: Query the user's Jellyfin media server — what films, shows, music and books are in the library, what has been watched, what is playing now, and which files are missing metadata. Use when the user asks about their own media collection or their server's activity.
+description: Query the user's Jellyfin media server, what films, shows, music and books are in the library, what has been watched, what is playing now, and which files are missing metadata. Use when the user asks about their own media collection or their server's activity.
 ---
 
 # Jellyfin (connected)
@@ -35,11 +35,11 @@ curl -s -H "$AUTH" "$JELLYFIN_URL/Users" | jq -r '.[] | "\(.Id)\t\(.Name)"'
 curl -s -H "$AUTH" "$JELLYFIN_URL/Sessions" | jq -r '.[] | select(.NowPlayingItem) | "\(.UserName): \(.NowPlayingItem.Name)"'
 ```
 
-`recursive=true` is nearly always what you want — without it `/Items` returns only the top level, which is a
+`recursive=true` is nearly always what you want: without it `/Items` returns only the top level, which is a
 list of libraries rather than of media, and looks like an empty result.
 
 Watched state is per user: add `userId=<id>` to `/Items` and each item carries `UserData.Played` and
-`UserData.PlaybackPositionTicks` (ticks are 100-nanosecond units — divide by 10,000,000 for seconds).
+`UserData.PlaybackPositionTicks` (ticks are 100-nanosecond units: divide by 10,000,000 for seconds).
 
 ## Care
 

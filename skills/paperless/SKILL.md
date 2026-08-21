@@ -1,12 +1,12 @@
 ---
 name: paperless
-description: Search and read the user's scanned documents in Paperless-ngx — invoices, contracts, letters, receipts — by full-text query, tag, correspondent or date. Use when the user asks you to find a document, check what one says, or pull figures out of their paperwork.
+description: Search and read the user's scanned documents in Paperless-ngx (invoices, contracts, letters, receipts) by full-text query, tag, correspondent or date. Use when the user asks you to find a document, check what one says, or pull figures out of their paperwork.
 ---
 
 # Paperless-ngx (connected)
 
 `$PAPERLESS_URL` is the instance, `$PAPERLESS_TOKEN` an API token. Every call carries
-`-H "Authorization: Token $PAPERLESS_TOKEN"` — **`Token`, not `Bearer`**, which is the single most common way
+`-H "Authorization: Token $PAPERLESS_TOKEN"`, **`Token`, not `Bearer`**, which is the single most common way
 this fails with a bare 403.
 
 ```sh
@@ -48,5 +48,5 @@ and gets you the same text, or worse text.
   appears and give the document id, so they can open it themselves.
 - **These are somebody's private papers.** Read what the question needs; don't dump a whole document into the
   conversation, and don't fetch unrelated ones "for context".
-- Writes (`POST`/`PATCH` on `/api/documents/`) exist. Ask before changing tags or titles — Paperless is often
+- Writes (`POST`/`PATCH` on `/api/documents/`) exist. Ask before changing tags or titles: Paperless is often
   someone's only copy of their filing system.

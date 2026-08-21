@@ -1,6 +1,6 @@
 ---
 name: homeassistant
-description: Read sensors and control devices in the user's home through the Home Assistant REST API — lights, heating, covers, switches, scripts and scenes. Use when the user asks about the state of their house (temperature, whether something is on or open, energy use) or asks you to turn something on or off.
+description: Read sensors and control devices in the user's home through the Home Assistant REST API, lights, heating, covers, switches, scripts and scenes. Use when the user asks about the state of their house (temperature, whether something is on or open, energy use) or asks you to turn something on or off.
 ---
 
 # Home Assistant (connected)
@@ -8,7 +8,7 @@ description: Read sensors and control devices in the user's home through the Hom
 `$HOMEASSISTANT_URL` is the instance, `$HOMEASSISTANT_TOKEN` a long-lived token. Every call carries
 `-H "Authorization: Bearer $HOMEASSISTANT_TOKEN"`.
 
-Check the connection before anything else — this is a machine on the user's own network, so "it's asleep" and
+Check the connection before anything else: this is a machine on the user's own network, so "it's asleep" and
 "the token is wrong" are both ordinary:
 
 ```sh
@@ -38,7 +38,7 @@ curl -s -X POST -H "Authorization: Bearer $HOMEASSISTANT_TOKEN" -H "Content-Type
   -d '{"entity_id": "light.kitchen"}' "$HOMEASSISTANT_URL/api/services/light/turn_on"
 ```
 
-The path is `/api/services/<domain>/<service>` and the domain is the entity id's prefix — `light.kitchen` takes
+The path is `/api/services/<domain>/<service>` and the domain is the entity id's prefix: `light.kitchen` takes
 `light/turn_on`, `switch.boiler` takes `switch/turn_on`, `cover.garage` takes `cover/open_cover`. Service data
 goes in the body alongside `entity_id` (`{"entity_id": "light.kitchen", "brightness_pct": 40}`).
 

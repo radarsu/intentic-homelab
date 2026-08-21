@@ -5,12 +5,12 @@ import * as extensionApi from "@intentic/extension-api";
 
 const { ExtensionManifestSchema, extensionIdOf } = extensionApi;
 
-/* This pack IS its manifest — there is no code to test, so the manifest is what gets tested.
+/* This pack IS its manifest: there is no code to test, so the manifest is what gets tested.
  *
  * The envelope is checked against the REAL schema from the published SDK. The CARDS cannot be: the published
  * `@intentic/extension-api@1.176.3` still calls this contribution point `contributes.connectors` and shapes an
- * entry as `{provider, kind, …}`, while the daemon that actually runs — see the manifests baked into the
- * sandbox image at /opt/extensions — reads `contributes.capabilities` with `{id, kind, …}` entries. The host is
+ * entry as `{provider, kind, …}`, while the daemon that actually runs: see the manifests baked into the
+ * sandbox image at /opt/extensions: reads `contributes.capabilities` with `{id, kind, …}` entries. The host is
  * ahead of its own published SDK, so the cards are asserted here against the shape the DAEMON parses, and the
  * canary test at the bottom fails the day the SDK catches up. */
 
@@ -28,7 +28,7 @@ test(`the manifest envelope parses against the published ExtensionManifestSchema
 test(`every card is a cli capability with a credential, a skill and an env mapping`, async () => {
     for (const card of manifest.contributes.capabilities) {
         const parsed = card;
-        assert.equal(parsed.kind, `cli`, `${card.id} must be a cli card — the other kinds mean something else`);
+        assert.equal(parsed.kind, `cli`, `${card.id} must be a cli card: the other kinds mean something else`);
         assert.deepEqual(Object.keys(parsed).sort(), [`catalog`, `env`, `fields`, `id`, `kind`, `skill`]);
         for (const field of parsed.fields) {
             assert.match(field.key, /^[a-zA-Z][a-zA-Z0-9]*$/);
@@ -40,7 +40,7 @@ test(`every card is a cli capability with a credential, a skill and an env mappi
         assert.match(parsed.id, /^[a-z0-9][a-z0-9-]*$/);
 
         // Every service here is self-hosted, so a base URL is not optional and there is no default to fall
-        // back to — a card without one would render a form the user cannot complete.
+        // back to: a card without one would render a form the user cannot complete.
         assert.ok(
             parsed.fields.some((field) => field.key === `url`),
             `${card.id} has no url field`,
@@ -82,14 +82,14 @@ test(`each skill names the auth header its service actually wants`, async () => 
     }
 });
 
-/* THE CANARY. When the SDK on npm catches up with the host, this fails — and the fix is to delete it and
+/* THE CANARY. When the SDK on npm catches up with the host, this fails: and the fix is to delete it and
  * validate the cards against `CapabilityContributionSchema` above, which is what should have been possible all
  * along. Until then it records, in a place that runs, why this file hand-rolls those assertions. */
 test(`the published SDK is still behind the host on this contribution point`, () => {
-    assert.equal(extensionApi.CapabilityContributionSchema, undefined, `the SDK now ships CapabilityContributionSchema — validate the cards with it and delete this test`);
+    assert.equal(extensionApi.CapabilityContributionSchema, undefined, `the SDK now ships CapabilityContributionSchema: validate the cards with it and delete this test`);
     assert.ok(extensionApi.ConnectorContributionSchema !== undefined);
     // The published envelope drops what it doesn't know, so a `capabilities` key survives parsing as nothing at
-    // all — silent, which is exactly why this is asserted rather than trusted.
+    // all: silent, which is exactly why this is asserted rather than trusted.
     assert.equal(ExtensionManifestSchema.parse(manifest).contributes?.capabilities, undefined);
     assert.equal(extensionApi.extensionApiVersion, `0.4.0`);
 });

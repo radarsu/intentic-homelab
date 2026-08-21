@@ -14,9 +14,9 @@
                 "catalog": {
                     "name": "Home Assistant",
                     "logo": "homeassistant",
-                    "description": "Your house as agent tools: read every sensor and switch, and call any service — lights, heating, covers, scripts.",
+                    "description": "Your house as agent tools: read every sensor and switch, and call any service, lights, heating, covers, scripts.",
                     "category": "servers",
-                    "hint": "If Home Assistant runs on the same machine as this sandbox, use http://host.docker.internal:8123 rather than localhost — the sandbox is a container. A long-lived token never expires; revoke it on the same page that created it.",
+                    "hint": "If Home Assistant runs on the same machine as this sandbox, use http://host.docker.internal:8123 rather than localhost, the sandbox is a container. A long-lived token never expires; revoke it on the same page that created it.",
                     "guide": {
                         "urlFromField": "url",
                         "path": "/profile/security",
@@ -24,7 +24,7 @@
                         "steps": [
                             "Open your Home Assistant profile → Security.",
                             "Scroll to Long-lived access tokens and create one; name it after this sandbox so you can revoke it separately.",
-                            "Copy the token — Home Assistant shows it once — and paste it here."
+                            "Copy the token (Home Assistant shows it once) and paste it here."
                         ]
                     }
                 },
@@ -67,7 +67,7 @@
                 "catalog": {
                     "name": "Jellyfin",
                     "logo": "jellyfin",
-                    "description": "Your media library as a thing the agent can search and report on — what's in it, what's missing, what's been watched.",
+                    "description": "Your media library as a thing the agent can search and report on, what's in it, what's missing, what's been watched.",
                     "category": "servers",
                     "hint": "An API key is server-wide and read/write. The agent uses it for queries; ask it to check what a request would change before letting it write.",
                     "guide": {
@@ -96,7 +96,7 @@
                     "logo": "immich",
                     "description": "Your photo library, searchable in words: find the pictures from a trip, from a person, or of a thing you can only describe.",
                     "category": "servers",
-                    "hint": "The API key belongs to one user and carries that user's access. Smart search is Immich's own semantic index — it answers \"the picture of the blue door\" without any tagging.",
+                    "hint": "The API key belongs to one user and carries that user's access. Smart search is Immich's own semantic index, it answers \"the picture of the blue door\" without any tagging.",
                     "guide": {
                         "urlFromField": "url",
                         "path": "/user-settings",
